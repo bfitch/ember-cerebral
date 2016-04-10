@@ -1,6 +1,6 @@
 {
   "name": "ember-cerebral",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ember-cli addon for integrating cerebral in Ember applications",
   "directories": {
     "doc": "doc",
