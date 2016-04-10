@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  description: ''
+  description: 'Generate an instance-initializer to add services to Cerebral.'
 
   // locals: function(options) {
   //   // Return custom template variables here.

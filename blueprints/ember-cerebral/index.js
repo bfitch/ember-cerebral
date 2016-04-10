@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  description: ''
+  description: 'Initializer to configure and inject Cerebral into your application.'
 
   // locals: function(options) {
   //   // Return custom template variables here.
