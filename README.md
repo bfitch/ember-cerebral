@@ -1,4 +1,6 @@
-# Ember-cerebral
+# Ember Cerebral
+
+Enhanced state management for complex Ember apps using [Cerebral](http://www.cerebraljs.com/).
 
 Installation
 --------------
@@ -11,7 +13,7 @@ Installation
 from npm and injects Cerebral into your app components and routes.
 
   The `services` generator will generate an instance initializer, giving you access to
-the cerebral controller so you can inject services (ajax, ember-data, etc) into Cerebral
+the cerebral controller so you can inject services (ajax, ember-data, etc) into Cerebral.
 
 - `npm install ember-browserify --save-dev` - necessary for loading npm packages
 
@@ -19,6 +21,9 @@ the cerebral controller so you can inject services (ajax, ember-data, etc) into 
 
 Usage
 --------
+
+Check out the example [TodoMVC app HERE!](https://github.com/bfitch/ember-cerebral-todomvc)
+
 Expose Cerebral state to your component using the `CerebralMixin`:
 
 ```js
@@ -52,7 +57,9 @@ actions: {
 }
 ```
 
-
+Thanks
+----------
+Thanks to Toran Billups (@toranb) who's [screencast](https://vimeo.com/160234990) on [ember-redux](https://github.com/toranb/ember-redux) inspired this integration.
 
 
 -----------------
