@@ -1,26 +1,59 @@
 # Ember-cerebral
 
-This README outlines the details of collaborating on this Ember addon.
+Installation
+--------------
+- `ember install ember-cerebral`
 
-## Installation
+- `ember g services cerebral`
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+  At installation, a default generator will run, creating an initializer at:
+`app/initializers/cerebral`. This initializer `import`s cerebral packages
+from npm and injects Cerebral into your app components and routes.
 
-## Running
+  The `services` generator will generate an instance initializer, giving you access to
+the cerebral controller so you can inject services (ajax, ember-data, etc) into Cerebral
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+- `npm install ember-browserify --save-dev` - necessary for loading npm packages
 
-## Running Tests
+- `npm install cerebral cerebral-model-baobab cerebral-module-devtools --save`
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+Usage
+--------
+Expose Cerebral state to your component using the `CerebralMixin`:
 
-## Building
+```js
+// in component x-foo.js
 
-* `ember build`
+import CerebralMixin from 'ember-cerebral/mixins/cerebral-mixin';
 
+export default Ember.Component.extend(CerebralMixin, {
+  cerebralProps() {
+    userName: 'path.to.cerebral.userName'
+  }
+});
+```
+
+State is available as props on the component (and routes):
+
+```js
+// in component foo.js
+
+excitedUserName: Ember.computed('userName', function() {
+  return `${this.get('userName')}!!!!!!`;`
+})
+```
+
+Trigger signals to change state:
+```js
+actions: {
+  buttonClicked() {
+    this.get('signals').buttonClicked();
+  }
+}
+```
+
+
+
+
+-----------------
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
